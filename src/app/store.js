@@ -8,6 +8,7 @@ import testReducer from '../reducer/testReducer';
 import {applyMiddleware, compose, createStore, combineReducers} from 'redux';
 import thunk from '../middleware/redux-thunk';
 import customMiddleware from '../middleware/customMiddleware';
+import middlewareByCreateListenerMiddleware from '../middleware/middlewareByCreateListenerMiddleware'
 
 const middleWares = [thunk, customMiddleware];
 
@@ -36,6 +37,10 @@ export const store = configureStore({
   //     status: 'xxx',
   //   },
   // }
+  // // Custom by createListenerMiddleware
+  // middleware: (getDefaultMiddleware) => {
+  //   return getDefaultMiddleware().prepend(middlewareByCreateListenerMiddleware);
+  // },
 });
 
 // Redux bình thường
